@@ -23,3 +23,6 @@ FLASHING FIRMWARE INSTRUCTIONS:
 EMULATING MESH TOPOLOGIES:
 1. In order to do mesh testing without actually creating a physical mesh network (i.e., one in which nodes are placed far enough apart that some cannot physically communicate with one another) we will use a test network.
 2. This test network can be found in RHRouter.h and RHRouter.cpp. By uncommenting one of the #define RH_TEST_NETWORK definitions on lines 33-36 of RHRouter.h, the corresponding mesh topology will become active in RHRouter.cpp. Alternatively, the desired #define can be inserted just above the #ifdef RH_TEST_NETWORK block on line 224 of RHRouter.cpp.
+
+IMPORTANT NOTE:
+This boards will be unable to communicate with eachother if the server board is not connected to a serial monitor. This is because there is a line in the code that prevents it from continuing before the serial monitor is connected. This means that, when doing range testing, the server (but not necessarily the client) must be connected to a serial monitor to get any readings.
